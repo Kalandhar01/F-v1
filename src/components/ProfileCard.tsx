@@ -442,7 +442,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   return (
     <div
       ref={wrapRef}
-      className={`relative touch-none ${className}`.trim()}
+      className={`relative ${className}`.trim()}
       style={{ perspective: '500px', transform: 'translate3d(0, 0, 0.1px)', ...cardStyle } as React.CSSProperties}
     >
       {behindGlowEnabled && (
@@ -471,11 +471,11 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
             background: 'rgba(0, 0, 0, 0.9)',
             backfaceVisibility: 'hidden'
           }}
-          onMouseEnter={e => {
+          onMouseEnter={enableTilt ? e => {
             e.currentTarget.style.transition = 'none';
             e.currentTarget.style.transform = 'translateZ(0) rotateX(var(--rotate-y)) rotateY(var(--rotate-x))';
-          }}
-          onMouseLeave={e => {
+          } : undefined}
+          onMouseLeave={enableTilt ? e => {
             const shell = shellRef.current;
             if (shell?.classList.contains('entering')) {
               e.currentTarget.style.transition = 'transform 180ms ease-out';
@@ -483,7 +483,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
               e.currentTarget.style.transition = 'transform 1s ease';
             }
             e.currentTarget.style.transform = 'translateZ(0) rotateX(0deg) rotateY(0deg)';
-          }}
+          } : undefined}
         >
           <div
             className="absolute inset-0"

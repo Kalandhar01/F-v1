@@ -21,7 +21,7 @@ const team = [
     name: 'Aslam',
     title: 'Digital Marketing Head',
     handle: 'aslam',
-    status: 'Growth Driver',
+    status: 'Growth Architect',
     avatarUrl: '/Aslam.png',
     miniAvatarUrl: '/Aslam.png',
     gradient: 'linear-gradient(145deg,#6366f180 0%,#71C4FF44 100%)',
@@ -68,6 +68,7 @@ function MemberCard({ member, index }: { member: typeof team[0]; index: number }
         miniAvatarUrl={member.miniAvatarUrl}
         innerGradient={member.gradient}
         behindGlowColor={member.glowColor}
+        enableTilt={false}
         contactText="View Profile"
         onContactClick={() => {
           const contactSection = document.getElementById('contact')
