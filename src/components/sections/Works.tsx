@@ -215,22 +215,66 @@ export default function Works() {
         </motion.div>
         {showGrid && (
           <motion.div
-            className="w-full min-h-[2500px] sm:min-h-[900px]"
+            className="w-full sm:min-h-[900px]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <Masonry
-              items={displayedItems}
-              ease="power3.out"
-              duration={0.6}
-              stagger={0.05}
-              animateFrom="bottom"
-              scaleOnHover={true}
-              hoverScale={0.95}
-              blurToFocus={true}
-              colorShiftOnHover={true}
-            />
+            {isMobile ? (
+              <motion.div
+                className="space-y-4"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { transition: { staggerChildren: 0.1 } },
+                }}
+              >
+                {displayedItems.map((item) => (
+                  <motion.div
+                    key={item.id}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const } },
+                    }}
+                    className="relative rounded-[10px] overflow-hidden group"
+                    style={{ aspectRatio: '4/3' }}
+                  >
+                    <div
+                      className="w-full h-full bg-cover bg-center"
+                      style={{ backgroundImage: `url(${item.img})` }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div className="absolute bottom-0 left-0 right-0 p-4">
+                          {item.category && (
+                            <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/50">
+                              {item.category}
+                            </span>
+                          )}
+                          {item.title && (
+                            <h3 className="text-base font-semibold text-white mt-1">
+                              {item.title}
+                            </h3>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            ) : (
+              <Masonry
+                items={displayedItems}
+                ease="power3.out"
+                duration={0.6}
+                stagger={0.05}
+                animateFrom="bottom"
+                scaleOnHover={true}
+                hoverScale={0.95}
+                blurToFocus={true}
+                colorShiftOnHover={true}
+              />
+            )}
           </motion.div>
         )}
       </Container>

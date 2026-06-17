@@ -441,16 +441,10 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           >
             <span
               ref={textInnerRef}
-              className="sm-toggle-textWrap relative inline-block h-[1em] overflow-hidden whitespace-nowrap hidden"
+              className="sm-toggle-textWrap relative inline-block h-0 overflow-hidden hidden"
               aria-hidden="true"
             >
-              <span className="sm-toggle-textInner flex flex-col leading-none">
-                {textLines.map((l, i) => (
-                  <span className="sm-toggle-line block h-[1em] leading-none text-sm" key={i}>
-                    {l}
-                  </span>
-                ))}
-              </span>
+              <span className="sm-toggle-textInner flex flex-col leading-none" />
             </span>
 
             <span
