@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageTransition from "@/components/layout/PageTransition";
 import BackgroundEffects from "@/components/layout/BackgroundEffects";
+import ClickSpark from "@/components/ClickSpark";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -46,14 +47,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body className="bg-black text-white antialiased">
-        <BackgroundEffects />
-        <div className="relative z-10">
-          <Navbar />
-          <PageTransition>
-            <main>{children}</main>
-          </PageTransition>
-          <Footer />
-        </div>
+        <ClickSpark sparkColor="#5831f5" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
+          <BackgroundEffects />
+          <div className="relative z-10">
+            <Navbar />
+            <PageTransition>
+              <main>{children}</main>
+            </PageTransition>
+            <Footer />
+          </div>
+        </ClickSpark>
       </body>
     </html>
   );
