@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageTransition from "@/components/layout/PageTransition";
+import BackgroundEffects from "@/components/layout/BackgroundEffects";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -45,11 +46,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body className="bg-black text-white antialiased">
-        <Navbar />
-        <PageTransition>
-          <main>{children}</main>
-        </PageTransition>
-        <Footer />
+        <BackgroundEffects />
+        <div className="relative z-10">
+          <Navbar />
+          <PageTransition>
+            <main>{children}</main>
+          </PageTransition>
+          <Footer />
+        </div>
       </body>
     </html>
   );

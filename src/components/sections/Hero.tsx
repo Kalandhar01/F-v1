@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Play } from 'lucide-react'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
-import Silk from '@/components/Silk'
 
 const stagger = {
   hidden: { opacity: 0 },
@@ -29,15 +28,6 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Silk background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <Silk speed={3} scale={1.5} color="#3818b5" noiseIntensity={2.7} rotation={0} />
-      </div>
-
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/60 pointer-events-none" />
-
-      {/* Grid background */}
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute inset-0"
