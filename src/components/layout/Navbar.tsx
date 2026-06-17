@@ -35,8 +35,8 @@ export default function Navbar() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           scrolled
-            ? 'bg-black/80 backdrop-blur-xl border-b border-white/[0.04]'
-            : 'bg-transparent',
+            ? 'bg-black/80 backdrop-blur-2xl border-b border-white/[0.04]'
+            : 'bg-black/40 backdrop-blur-xl',
         )}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -46,13 +46,13 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 sm:h-20">
             <a
               href="#hero"
-              className="text-xl font-bold tracking-tight text-white"
+              className="text-xl font-bold tracking-tight text-white hover:text-white/80 transition-colors duration-300"
             >
               {siteConfig.name}
-              <span className="text-white/30 font-light">.</span>
+              <span className="text-indigo-400 font-light">.</span>
             </a>
 
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden md:flex items-center gap-2">
               {navLinks.map((link) => {
                 const isActive = activeId === link.href.replace('#', '')
                 return (
@@ -60,17 +60,17 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     className={cn(
-                      'relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-300',
+                      'relative px-4 py-2 text-sm font-medium rounded-xl transition-all duration-300',
                       isActive
                         ? 'text-white'
-                        : 'text-white/50 hover:text-white hover:bg-white/5',
+                        : 'text-white/50 hover:text-white hover:bg-white/[0.04]',
                     )}
                   >
                     {link.label}
                     {isActive && (
                       <motion.span
                         layoutId="nav-active"
-                        className="absolute inset-0 bg-white/5 rounded-lg"
+                        className="absolute inset-0 bg-white/[0.04] rounded-xl border border-white/[0.04]"
                         transition={{
                           type: 'spring',
                           stiffness: 380,

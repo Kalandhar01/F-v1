@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageTransition from "@/components/layout/PageTransition";
-import BackgroundEffects from "@/components/layout/BackgroundEffects";
+import SplashCursor from "@/components/layout/SplashCursor";
 import ClickSpark from "@/components/ClickSpark";
 
 const inter = Inter({
@@ -48,7 +48,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable}`}>
       <body className="bg-black text-white antialiased">
         <ClickSpark sparkColor="#5831f5" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
-          <BackgroundEffects />
+          <SplashCursor />
           <div className="relative z-10">
             <Navbar />
             <PageTransition>
