@@ -39,10 +39,10 @@ const values = [
 ]
 
 const stats = [
-  { value: '150+', label: 'Projects Delivered' },
+  { value: '10+', label: 'Projects Delivered' },
   { value: '98%', label: 'Client Satisfaction' },
-  { value: '8+', label: 'Years Experience' },
-  { value: '50+', label: 'Team Members' },
+  { value: '2+', label: 'Years Experience' },
+  { value: '2', label: 'Team Members' },
 ]
 
 export default function About() {

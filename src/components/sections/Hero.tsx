@@ -158,9 +158,9 @@ export default function Hero() {
           >
             <div className="inline-flex items-center divide-x divide-white/[0.06] rounded-2xl border border-white/[0.04] bg-white/[0.02] backdrop-blur-sm px-4 sm:px-10 py-3 sm:py-5">
               {[
-                { value: '150+', label: 'Projects' },
+                { value: '10+', label: 'Projects' },
                 { value: '98%', label: 'Satisfaction' },
-                { value: '8+', label: 'Years' },
+                { value: '2+', label: 'Years' },
               ].map((s, i) => (
                 <div key={s.label} className="px-3 sm:px-8 first:pl-0 last:pr-0">
                   <div className="text-lg sm:text-xl font-bold text-white">
