@@ -6,6 +6,7 @@ import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
 import SplitText from '@/components/SplitText'
 import Silk from '@/components/Silk'
+import CountUp from '@/components/ui/CountUp'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -37,25 +38,21 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Silk background — reduced intensity */}
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <Silk speed={3} scale={1.5} color="#4f46e5" noiseIntensity={0.6} rotation={0.3} />
+      {/* Silk background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Silk speed={5} scale={1} color="#5a34f2" noiseIntensity={1.5} rotation={0} />
       </div>
 
-      {/* Dark base overlay */}
-      <div className="absolute inset-0 bg-black/80 pointer-events-none" />
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/60 pointer-events-none" />
 
-      {/* Ambient glows */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-white/[0.02] rounded-full blur-[100px] pointer-events-none" />
-
-      {/* Soft grid */}
+      {/* Grid background */}
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+              'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
             backgroundSize: '64px 64px',
             maskImage:
               'radial-gradient(ellipse 80% 50% at 50% 40%, black, transparent)',
@@ -63,22 +60,7 @@ export default function Hero() {
               'radial-gradient(ellipse 80% 50% at 50% 40%, black, transparent)',
           }}
         />
-      </div>
-
-      {/* Floating particles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-white/10 rounded-full animate-float"
-            style={{
-              left: `${15 + i * 15}%`,
-              top: `${20 + (i % 3) * 25}%`,
-              animationDelay: `${i * 0.8}s`,
-              animationDuration: `${5 + i * 1.5}s`,
-            }}
-          />
-        ))}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(255,255,255,0.04),transparent)]" />
       </div>
 
       <Container className="relative z-10">
@@ -98,49 +80,45 @@ export default function Hero() {
 
           {/* Headline */}
           <div className="max-w-3xl mx-auto">
-            <div className="text-[clamp(2.5rem,7vw,5rem)] font-bold tracking-tight leading-[1.05]">
-              <div className="text-white">
-                <SplitText
-                  text="Building Digital"
-                  tag="span"
-                  delay={60}
-                  duration={0.5}
-                  ease="power3.out"
-                  splitType="chars"
-                  from={{ opacity: 0, y: 30 }}
-                  to={{ opacity: 1, y: 0 }}
-                  threshold={0.1}
-                  rootMargin="-100px"
-                />
-              </div>
-              <div className="gradient-text-premium">
-                <SplitText
-                  text="Experiences"
-                  tag="span"
-                  delay={60}
-                  duration={0.5}
-                  ease="power3.out"
-                  splitType="chars"
-                  from={{ opacity: 0, y: 30 }}
-                  to={{ opacity: 1, y: 0 }}
-                  threshold={0.1}
-                  rootMargin="-100px"
-                />
-              </div>
-              <div className="text-white/90">
-                <SplitText
-                  text="That Drive Growth"
-                  tag="span"
-                  delay={60}
-                  duration={0.5}
-                  ease="power3.out"
-                  splitType="chars"
-                  from={{ opacity: 0, y: 30 }}
-                  to={{ opacity: 1, y: 0 }}
-                  threshold={0.1}
-                  rootMargin="-100px"
-                />
-              </div>
+            <div
+              className="text-[clamp(2.5rem,7vw,5rem)] font-bold tracking-tight leading-[0.85] flex flex-col items-center"
+            >
+              <SplitText
+                text="Building Digital"
+                className="text-white m-0 leading-none"
+                delay={60}
+                duration={0.5}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 30 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+              />
+              <SplitText
+                text="Experiences"
+                className="gradient-text-premium m-0 leading-none -mt-4 sm:-mt-8"
+                delay={60}
+                duration={0.5}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 30 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+              />
+              <SplitText
+                text="That Drive Growth"
+                className="text-white/90 m-0 leading-none -mt-4 sm:-mt-8"
+                delay={60}
+                duration={0.5}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 30 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+              />
             </div>
           </div>
 
@@ -172,6 +150,30 @@ export default function Hero() {
             })}
           </motion.div>
 
+          {/* Stats */}
+          
+          <motion.div
+            className="mt-16 sm:mt-20"
+            variants={itemVariants}
+          >
+            <div className="inline-flex items-center divide-x divide-white/[0.06] rounded-2xl border border-white/[0.04] bg-white/[0.02] backdrop-blur-sm px-4 sm:px-10 py-3 sm:py-5">
+              {[
+                { value: '150+', label: 'Projects' },
+                { value: '98%', label: 'Satisfaction' },
+                { value: '8+', label: 'Years' },
+              ].map((s, i) => (
+                <div key={s.label} className="px-3 sm:px-8 first:pl-0 last:pr-0">
+                  <div className="text-lg sm:text-xl font-bold text-white">
+                    <CountUp value={s.value} duration={2} delay={i * 200} />
+                  </div>
+                  <div className="text-xs text-white/30 mt-0.5 whitespace-nowrap">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
           {/* CTA Buttons */}
           <motion.div
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
@@ -180,7 +182,7 @@ export default function Hero() {
             <Button
               href="#contact"
               size="lg"
-              className="min-w-[180px]"
+              className="w-full sm:min-w-[180px] sm:w-auto"
             >
               Start a Project
               <ArrowRight size={16} />
@@ -189,34 +191,11 @@ export default function Hero() {
               href="#work"
               variant="secondary"
               size="lg"
-              className="min-w-[180px]"
+              className="w-full sm:min-w-[180px] sm:w-auto"
             >
               <Play size={16} />
               View Our Work
             </Button>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            className="mt-16 sm:mt-20"
-            variants={itemVariants}
-          >
-            <div className="inline-flex items-center divide-x divide-white/[0.06] rounded-2xl border border-white/[0.04] bg-white/[0.02] backdrop-blur-sm px-6 sm:px-10 py-4 sm:py-5">
-              {[
-                { value: '150+', label: 'Projects' },
-                { value: '98%', label: 'Satisfaction' },
-                { value: '8+', label: 'Years' },
-              ].map((s, i) => (
-                <div key={s.label} className="px-6 sm:px-8 first:pl-0 last:pr-0">
-                  <div className="text-lg sm:text-xl font-bold text-white">
-                    {s.value}
-                  </div>
-                  <div className="text-xs text-white/30 mt-0.5 whitespace-nowrap">
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </motion.div>
       </Container>

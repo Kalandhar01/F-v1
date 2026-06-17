@@ -319,12 +319,6 @@ export default function SplashCursor({
       const dy = fluid.mouseY - fluid.prevMouseY
 
       if (Math.abs(dx) > 0 || Math.abs(dy) > 0) {
-        // Parse color hex
-        const hex = color.replace('#', '')
-        const r = parseInt(hex.substring(0, 2), 16) / 255
-        const g = parseInt(hex.substring(2, 4), 16) / 255
-        const b = parseInt(hex.substring(4, 6), 16) / 255
-        // Intensity multiplier for subtlety
         const intensity = 0.8
         fluid.splat(fluid.mouseX, fluid.mouseY, dx * intensity, dy * intensity)
         fluid.splat(fluid.mouseX, fluid.mouseY, dx * intensity, dy * intensity)
@@ -350,9 +344,6 @@ export default function SplashCursor({
 
       if (Math.abs(dx) > 0 || Math.abs(dy) > 0) {
         const hex = color.replace('#', '')
-        const r = parseInt(hex.substring(0, 2), 16) / 255
-        const g = parseInt(hex.substring(2, 4), 16) / 255
-        const b = parseInt(hex.substring(4, 6), 16) / 255
         const intensity = 0.6
         fluid.splat(fluid.mouseX, fluid.mouseY, dx * intensity, dy * intensity)
         fluid.splat(fluid.mouseX, fluid.mouseY, dx * intensity, dy * intensity)

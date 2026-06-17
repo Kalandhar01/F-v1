@@ -1,82 +1,145 @@
 'use client'
 
-import { useState, useRef } from 'react'
-import { motion, AnimatePresence, useInView } from 'framer-motion'
-import { Plus, Minus } from 'lucide-react'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { Quote, Star } from 'lucide-react'
 import Container from '@/components/ui/Container'
 import SectionHeading from '@/components/ui/SectionHeading'
-import { faqs } from '@/constants'
+
+const testimonials = [
+  {
+    quote:
+      'NEXUS transformed our digital presence completely. The new platform increased our conversion rate by 45% within the first month. Their strategic UX approach was a game-changer for our business.',
+    author: 'Ananya Sharma',
+    role: 'CEO',
+    company: 'Stellar Technologies',
+    initials: 'AS',
+    gradient: 'from-purple-500/10 to-blue-500/5',
+  },
+  {
+    quote:
+      'Working with NEXUS felt like an extension of our own team. They understood our vision from day one and delivered beyond expectations. The analytics dashboard handles 50K+ users flawlessly.',
+    author: 'Arjun Patel',
+    role: 'CTO',
+    company: 'Flow Productivity',
+    initials: 'AP',
+    gradient: 'from-blue-500/10 to-cyan-500/5',
+  },
+  {
+    quote:
+      'The e-commerce experience NEXUS built is absolutely stunning. Our revenue grew 150% year-over-year, and our customers consistently compliment the smooth shopping experience.',
+    author: 'Priya Singh',
+    role: 'VP of Product',
+    company: 'Luxe Retail Group',
+    initials: 'PS',
+    gradient: 'from-indigo-500/10 to-purple-500/5',
+  },
+  {
+    quote:
+      'Their expertise in modern web architecture saved us months of development time. The platform is not only beautiful but incredibly performant — 99.9% uptime since launch.',
+    author: 'Rahul Verma',
+    role: 'Engineering Director',
+    company: 'Meridian Bank',
+    initials: 'RV',
+    gradient: 'from-cyan-500/10 to-blue-500/5',
+  },
+  {
+    quote:
+      'NEXUS doesn\'t just build websites — they build growth engines. Our user engagement metrics improved by 3x after the redesign. Their data-driven approach is unparalleled.',
+    author: 'Neha Gupta',
+    role: 'Head of Growth',
+    company: 'Pulse Fitness',
+    initials: 'NG',
+    gradient: 'from-purple-500/10 to-pink-500/5',
+  },
+  {
+    quote:
+      'From strategy to execution, NEXUS delivered excellence at every step. The brand identity they created is timeless, and the web experience perfectly captures our premium positioning.',
+    author: 'Vikram Joshi',
+    role: 'Founder & Creative Director',
+    company: 'Aether Space',
+    initials: 'VJ',
+    gradient: 'from-blue-500/10 to-indigo-500/5',
+  },
+]
+
+const rows = [
+  testimonials.slice(0, 3),
+  testimonials.slice(3, 6),
+]
 
 export default function FAQ() {
-  const [open, setOpen] = useState<number | null>(null)
   const ref = useRef<HTMLDivElement>(null!)
-  const isInView = useInView(ref, { once: true, margin: '-60px' })
+  const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="faq" className="relative py-24 sm:py-32">
+    <section id="faq" className="relative py-24 sm:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(255,255,255,0.015),transparent)] pointer-events-none" />
       <Container>
         <SectionHeading
-          label="FAQ"
-          title="Frequently Asked Questions"
-          description="Answers to the most common questions about how we work and what to expect."
+          label="Testimonials"
+          title="What Our Clients Say"
+          description="Real feedback from real partnerships — here is what our clients have to say about working with us."
         />
-
-        <motion.div
-          ref={ref}
-          className="max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const }}
-        >
-          {faqs.map((faq, i) => {
-            const isOpen = open === i
-            return (
-              <div
-                key={i}
-                className="group border-b border-white/5 last:border-b-0"
-              >
-                <button
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between py-5 sm:py-6 text-left transition-colors duration-300 hover:bg-white/[0.01] px-4 -mx-4 rounded-lg"
-                  aria-expanded={isOpen}
-                >
-                  <span className="text-sm sm:text-base font-medium text-white/80 group-hover:text-white transition-colors pr-4">
-                    {faq.question}
-                  </span>
-                  <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors duration-300">
-                    {isOpen ? (
-                      <Minus size={14} className="text-white/60" />
-                    ) : (
-                      <Plus size={14} className="text-white/60" />
-                    )}
-                  </span>
-                </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      key="content"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{
-                        height: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] as const },
-                        opacity: { duration: 0.2, delay: 0.1 },
-                      }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pb-5 sm:pb-6 px-4">
-                        <p className="text-sm text-white/50 leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            )
-          })}
-        </motion.div>
       </Container>
+
+      <div ref={ref} className="relative space-y-5">
+        {rows.map((row, rowIdx) => (
+          <motion.div
+            key={rowIdx}
+            className="flex gap-5 w-max"
+            initial={{ x: rowIdx === 0 ? '0%' : '-33%' }}
+            animate={
+              isInView
+                ? {
+                    x: rowIdx === 0 ? '-33%' : '0%',
+                    transition: {
+                      duration: 40,
+                      repeat: Infinity,
+                      ease: 'linear',
+                    },
+                  }
+                : { x: rowIdx === 0 ? '0%' : '-33%' }
+            }
+            whileHover={{ transition: { duration: 80 } }}
+          >
+            {[...row, ...row, ...row].map((t, i) => (
+              <div
+                key={`${t.author}-${i}`}
+                className="group relative rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.03] to-white/[0.01] bg-white/[0.02] p-7 sm:p-8 transition-all duration-500 hover:bg-white/[0.04] hover:border-white/[0.1] w-[340px] sm:w-[380px] flex-shrink-0"
+              >
+                <Quote size={18} className="text-white/10 absolute top-6 right-6" />
+
+                <div className="flex gap-1 mb-4">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <Star key={s} size={12} className="fill-indigo-400/40 text-indigo-400/40" />
+                  ))}
+                </div>
+
+                <p className="text-sm sm:text-base text-white/60 leading-relaxed mb-6 line-clamp-4">
+                  {t.quote}
+                </p>
+
+                <div className="flex items-center gap-3.5">
+                  <div className="w-10 h-10 rounded-full bg-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:bg-white/[0.1] transition-colors duration-300">
+                    <span className="text-xs font-semibold text-white/50">
+                      {t.initials}
+                    </span>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-sm font-medium text-white/80 truncate">
+                      {t.author}
+                    </div>
+                    <div className="text-xs text-white/40 truncate">
+                      {t.role}, {t.company}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        ))}
+      </div>
     </section>
   )
 }

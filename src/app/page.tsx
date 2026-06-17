@@ -3,21 +3,31 @@ import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
 import Works from "@/components/sections/Works";
 import WhyUs from "@/components/sections/WhyUs";
+import Team from "@/components/sections/Team";
 import FAQ from "@/components/sections/FAQ";
 import LogoCloud from "@/components/sections/LogoCloud";
 import Contact from "@/components/sections/Contact";
+import CircularGallery from "@/components/CircularGallery";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Services />
-      <Works />
-      <WhyUs />
-      <FAQ />
-      <LogoCloud />
-      <Contact />
+      <div>
+        <div className="relative z-10">
+          <About />
+          <Services />
+          <Works />
+          <WhyUs />
+          <Team />
+          <FAQ />
+          <LogoCloud />
+          <Contact />
+          <section className="w-full h-[350px] sm:h-[600px]">
+            <CircularGallery />
+          </section>
+        </div>
+      </div>
     </>
   );
 }

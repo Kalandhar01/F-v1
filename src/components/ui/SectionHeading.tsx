@@ -32,17 +32,21 @@ export default function SectionHeading({
       )}
     >
       {label && (
-        <motion.span
-          className="inline-block text-xs font-medium tracking-[0.2em] uppercase text-white/40 mb-4"
+        <motion.div
+          className="flex items-center justify-center gap-3 mb-5"
           initial={{ opacity: 0, y: 10 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
           transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const }}
         >
-          {label}
-        </motion.span>
+          <span className="w-8 h-px bg-gradient-to-r from-transparent via-indigo-400/40 to-transparent" />
+          <span className="text-xs font-medium tracking-[0.25em] uppercase text-indigo-300/70">
+            {label}
+          </span>
+          <span className="w-8 h-px bg-gradient-to-r from-transparent via-indigo-400/40 to-transparent" />
+        </motion.div>
       )}
       <motion.h2
-        className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white"
+        className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{
@@ -51,11 +55,13 @@ export default function SectionHeading({
           ease: [0.25, 0.1, 0.25, 1] as const,
         }}
       >
-        {title}
+        <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
+          {title}
+        </span>
       </motion.h2>
       {description && (
         <motion.p
-          className="mt-4 text-base sm:text-lg text-white/60 leading-relaxed"
+          className="mt-5 text-base sm:text-lg text-white/50 leading-relaxed max-w-xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{
