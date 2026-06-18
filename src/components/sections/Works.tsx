@@ -240,23 +240,24 @@ export default function Works() {
                     className="relative rounded-[10px] overflow-hidden group"
                     style={{ aspectRatio: '4/3' }}
                   >
-                    <div
-                      className="w-full h-full bg-cover bg-center"
-                      style={{ backgroundImage: `url(${item.img})` }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <div className="absolute bottom-0 left-0 right-0 p-4">
-                          {item.category && (
-                            <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/50">
-                              {item.category}
-                            </span>
-                          )}
-                          {item.title && (
-                            <h3 className="text-base font-semibold text-white mt-1">
-                              {item.title}
-                            </h3>
-                          )}
-                        </div>
+                    <img
+                      src={item.img}
+                      alt={item.title || 'Project image'}
+                      className="absolute inset-0 w-full h-full object-cover object-center"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        {item.category && (
+                          <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/50">
+                            {item.category}
+                          </span>
+                        )}
+                        {item.title && (
+                          <h3 className="text-base font-semibold text-white mt-1">
+                            {item.title}
+                          </h3>
+                        )}
                       </div>
                     </div>
                   </motion.div>
