@@ -391,7 +391,7 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   }, [closeOnClickAway, open, closeMenu])
 
   return (
-    <div className={`sm-scope fixed top-0 left-0 w-screen h-screen z-50 ${open ? 'overflow-hidden' : 'pointer-events-none'}`}>
+    <div className={`sm-scope fixed top-0 left-0 w-screen h-screen z-[201] ${open ? 'overflow-hidden' : 'pointer-events-none'}`}>
       <div
         className={`staggered-menu-wrapper pointer-events-none relative w-full h-full z-40 ${className || ''}`}
         style={
