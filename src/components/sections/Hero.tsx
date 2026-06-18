@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button'
 import SplitText from '@/components/SplitText'
 import Silk from '@/components/Silk'
 import CountUp from '@/components/ui/CountUp'
+import { MobileTechMarquee } from '@/components/sections/hero/MobileTechMarquee'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -63,20 +64,14 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(255,255,255,0.04),transparent)]" />
       </div>
 
-      <Container className="relative z-10">
+      <Container className="relative z-20">
         <motion.div
           className="max-w-4xl mx-auto text-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Badge */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium tracking-wider text-white/50 border border-white/[0.06] bg-white/[0.02] uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400/60" />
-              Premium Digital Agency
-            </span>
-          </motion.div>
+
 
           {/* Headline */}
           <div className="max-w-3xl mx-auto">
@@ -180,7 +175,7 @@ export default function Hero() {
             variants={itemVariants}
           >
             <Button
-              href="#contact"
+              href="/#contact"
               size="lg"
               className="w-full sm:min-w-[180px] sm:w-auto"
             >
@@ -188,7 +183,7 @@ export default function Hero() {
               <ArrowRight size={16} />
             </Button>
             <Button
-              href="#work"
+              href="/#work"
               variant="secondary"
               size="lg"
               className="w-full sm:min-w-[180px] sm:w-auto"
@@ -197,6 +192,8 @@ export default function Hero() {
               View Our Work
             </Button>
           </motion.div>
+
+          <MobileTechMarquee />
         </motion.div>
       </Container>
 

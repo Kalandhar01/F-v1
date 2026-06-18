@@ -1,6 +1,6 @@
 'use client'
 
-import React, { forwardRef, useMemo, useRef, useLayoutEffect } from 'react'
+import React, { forwardRef, useMemo, useRef, useLayoutEffect, useState, useEffect } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Color, Mesh, ShaderMaterial } from 'three'
 import type { IUniform } from 'three'
@@ -139,6 +139,14 @@ const Silk: React.FC<SilkProps> = ({
   rotation = 0,
 }) => {
   const meshRef = useRef<Mesh>(null)
+  const [isMobileDevice, setIsMobileDevice] = useState(true)
+
+  useEffect(() => {
+    setIsMobileDevice(window.innerWidth < 768)
+    const handleResize = () => setIsMobileDevice(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const uniforms = useMemo<SilkUniforms>(
     () => ({
@@ -153,7 +161,7 @@ const Silk: React.FC<SilkProps> = ({
   )
 
   return (
-    <Canvas dpr={[1, 2]} frameloop="always" style={{ position: 'absolute', inset: 0 }}>
+    <Canvas dpr={isMobileDevice ? 1 : [1, 2]} frameloop="always" style={{ position: 'absolute', inset: 0 }}>
       <SilkPlane ref={meshRef} uniforms={uniforms} />
     </Canvas>
   )

@@ -1,22 +1,33 @@
 import type { NavLink, Service } from '@/types'
+import { BRAND } from '@/config/brand'
 
 export const siteConfig = {
-  name: 'NEXUS',
-  tagline: 'Digital Agency',
-  description:
-    'Premium digital agency crafting world-class web experiences that drive business growth.',
-  email: 'hello@nexus.agency',
-  phone: '+1 (234) 567-890',
-  location: 'Coimbatore, Tamilnadu',
+  name: BRAND.name,
+  shortName: BRAND.shortName,
+  tagline: BRAND.tagline,
+  description: BRAND.description,
+  email: BRAND.email,
+  phone: BRAND.phone,
+  location: BRAND.location,
+  url: BRAND.url,
+  assets: BRAND.assets,
 }
 
 export const navLinks: NavLink[] = [
-  { label: 'Home', href: '#hero' },
-  { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#work' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'Team', href: '#team' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/', children: undefined },
+  {
+    label: 'Services',
+    href: '#services',
+    children: [
+      { label: 'Website Development', href: '/services/web-development', description: '', icon: 'Code2' },
+      { label: 'App Development', href: '/services/app-development', description: '', icon: 'Smartphone' },
+      { label: 'Digital Marketing', href: '/services/digital-marketing', description: '', icon: 'TrendingUp' },
+    ],
+  },
+  { label: 'Work', href: '/#work' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Why Us', href: '/#why-us' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 export const services: Service[] = [
@@ -45,12 +56,6 @@ export const services: Service[] = [
     icon: 'ShoppingCart',
   },
   {
-    title: 'Branding',
-    description:
-      'Strategic brand identities that resonate. Comprehensive branding from visual identity to brand guidelines.',
-    icon: 'Sparkles',
-  },
-  {
     title: 'Digital Consulting',
     description:
       'Expert guidance on technology strategy, architecture decisions, and digital transformation initiatives.',
@@ -63,4 +68,10 @@ export const socialLinks = [
   { label: 'LinkedIn', href: '#' },
   { label: 'Dribbble', href: '#' },
   { label: 'GitHub', href: '#' },
+]
+
+export const serviceRoutes = [
+  { label: 'Website Development', href: '/services/web-development' },
+  { label: 'Digital Marketing', href: '/services/digital-marketing' },
+  { label: 'App Development', href: '/services/app-development' },
 ]

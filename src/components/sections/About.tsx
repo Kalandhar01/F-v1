@@ -84,7 +84,7 @@ export default function About() {
               </div>
 
               <a
-                href="#contact"
+                href="/#contact"
                 className="inline-flex items-center gap-2.5 text-sm font-medium text-white/50 hover:text-white transition-colors duration-300 group mt-4"
               >
                 <span className="w-8 h-px bg-white/20 group-hover:bg-white/60 transition-colors duration-300" />

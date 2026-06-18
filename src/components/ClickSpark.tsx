@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useEffect, useCallback } from 'react'
+import React, { useRef, useEffect, useCallback, useState } from 'react'
 
 interface ClickSparkProps {
   sparkColor?: string
@@ -33,8 +33,17 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const sparksRef = useRef<Spark[]>([])
   const startTimeRef = useRef<number | null>(null)
+  const [isMobileDevice, setIsMobileDevice] = useState(true)
 
   useEffect(() => {
+    setIsMobileDevice(window.innerWidth < 768)
+    const handleResize = () => setIsMobileDevice(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  useEffect(() => {
+    if (isMobileDevice) return
     const canvas = canvasRef.current
     if (!canvas) return
 
@@ -84,6 +93,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   )
 
   useEffect(() => {
+    if (isMobileDevice) return
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
@@ -132,9 +142,10 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     return () => {
       cancelAnimationFrame(animationId)
     }
-  }, [sparkColor, sparkSize, sparkRadius, sparkCount, duration, easeFunc, extraScale])
+  }, [sparkColor, sparkSize, sparkRadius, sparkCount, duration, easeFunc, extraScale, isMobileDevice])
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
+    if (isMobileDevice) return
     const canvas = canvasRef.current
     if (!canvas) return
     const rect = canvas.getBoundingClientRect()
@@ -150,6 +161,10 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     }))
 
     sparksRef.current.push(...newSparks)
+  }
+
+  if (isMobileDevice) {
+    return <>{children}</>
   }
 
   return (

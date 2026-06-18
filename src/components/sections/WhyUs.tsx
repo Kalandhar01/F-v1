@@ -13,7 +13,7 @@ export default function WhyUs() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="why-us" className="relative py-12 sm:py-16 min-h-[900px] sm:min-h-0 overflow-hidden">
+    <section id="why-us" className="relative z-10 overflow-hidden py-20 md:py-28 lg:py-32">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(255,255,255,0.01),transparent)] pointer-events-none" />
 
       <div className="hidden sm:block absolute top-20 right-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[150px] pointer-events-none" />

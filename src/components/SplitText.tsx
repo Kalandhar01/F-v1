@@ -43,6 +43,14 @@ const SplitText: React.FC<SplitTextProps> = ({
   const animationCompletedRef = useRef(false)
   const onCompleteRef = useRef(onLetterAnimationComplete)
   const [fontsLoaded, setFontsLoaded] = useState<boolean>(false)
+  const [isMobileDevice, setIsMobileDevice] = useState(true)
+
+  useEffect(() => {
+    setIsMobileDevice(window.innerWidth < 768)
+    const handleResize = () => setIsMobileDevice(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useEffect(() => {
     onCompleteRef.current = onLetterAnimationComplete

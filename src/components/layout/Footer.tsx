@@ -1,44 +1,44 @@
 import { TextHoverEffect } from "@/components/ui/text-hover-effect"
 import { MapPin } from "lucide-react"
 import { siteConfig } from "@/constants"
+import Image from "next/image"
 
 const footerColumns = [
   {
     title: "Pages",
     links: [
-      { title: "Home", href: "#hero" },
-      { title: "Services", href: "#services" },
-      { title: "Work", href: "#work" },
-      { title: "Why Us", href: "#why-us" },
-      { title: "FAQ", href: "#faq" },
-      { title: "Contact", href: "#contact" },
+      { title: "Home", href: "/#hero" },
+      { title: "Services", href: "/#services" },
+      { title: "Work", href: "/#work" },
+      { title: "Why Us", href: "/#why-us" },
+      { title: "FAQ", href: "/#faq" },
+      { title: "Contact", href: "/#contact" },
     ],
   },
   {
     title: "Services",
     links: [
-      { title: "Web Development", href: "#services" },
-      { title: "UI/UX Design", href: "#services" },
-      { title: "SaaS Development", href: "#services" },
-      { title: "E-Commerce", href: "#services" },
+      { title: "Web Development", href: "/#services" },
+      { title: "UI/UX Design", href: "/#services" },
+      { title: "SaaS Development", href: "/#services" },
+      { title: "E-Commerce", href: "/#services" },
     ],
   },
   {
     title: "Company",
     links: [
-      { title: "Branding", href: "#services" },
-      { title: "Digital Consulting", href: "#services" },
-      { title: "Start a project", href: "#contact" },
-      { title: "View our work", href: "#work" },
+      { title: "Digital Consulting", href: "/#services" },
+      { title: "Start a project", href: "/#contact" },
+      { title: "View our work", href: "/#work" },
     ],
   },
   {
     title: "Contact",
     links: [
       { title: siteConfig.email, href: `mailto:${siteConfig.email}` },
-      { title: "Start a project", href: "#contact" },
+      { title: "Start a project", href: "/#contact" },
       { title: "Share a brief", href: `mailto:${siteConfig.email}` },
-      { title: "View project work", href: "#work" },
+      { title: "View project work", href: "/#work" },
     ],
   },
 ]
@@ -49,14 +49,21 @@ export default function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 sm:gap-12 text-sm sm:flex-row sm:px-8">
         <div className="relative z-10 max-w-sm">
           <a
-            href="#hero"
-            className="relative z-20 mr-0 mb-4 flex items-center space-x-2 py-1 text-sm font-normal text-white md:mr-4"
+            href="/#hero"
+            className="group relative z-20 mr-0 mb-4 flex items-center gap-3 py-1 text-sm font-normal text-white transition-all duration-300 hover:scale-[1.03] hover:drop-shadow-[0_0_22px_rgba(99,102,241,0.55)] md:mr-4"
           >
-            <span className="flex size-8 items-center justify-center rounded-full border border-indigo-500/45 bg-indigo-950 text-[10px] font-semibold text-indigo-50">
-              NX
-            </span>
-            <span className="font-medium text-white">
-              {siteConfig.name}
+            <Image
+              src={siteConfig.assets.logoFooter}
+              alt={siteConfig.name}
+              width={168}
+              height={112}
+              className="h-12 w-auto object-contain transition-all duration-300"
+            />
+            <span className="flex flex-col">
+              <span className="font-semibold tracking-tight text-white">{siteConfig.name}</span>
+              <span className="text-[0.62rem] font-medium uppercase tracking-[0.18em] text-indigo-200/45">
+                {siteConfig.tagline}
+              </span>
             </span>
           </a>
           <p className="mt-4 max-w-xs leading-6 text-neutral-400">
@@ -105,7 +112,7 @@ export default function Footer() {
       </div>
 
       <div className="relative z-10 mx-auto mt-10 sm:mt-14 h-20 sm:h-32 md:h-44 lg:h-60 w-full max-w-6xl">
-        <TextHoverEffect text="NEXUS" duration={6.5} align="center" automatic />
+        <TextHoverEffect text="DREAMDIGITAL" duration={6.5} align="center" automatic />
       </div>
     </footer>
   )

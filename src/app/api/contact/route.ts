@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { BRAND } from '@/config/brand'
 
 function emailTemplate(name: string, email: string, projectType: string, message: string) {
   return `
@@ -22,13 +23,13 @@ function emailTemplate(name: string, email: string, projectType: string, message
                   <td style="background:linear-gradient(135deg,#6366f1,#818cf8);padding:2px;border-radius:50%;">
                     <table cellpadding="0" cellspacing="0" style="background:#0a0a0a;border-radius:50%;">
                       <tr>
-                        <td style="width:40px;height:40px;text-align:center;vertical-align:middle;font-size:18px;font-weight:800;color:#818cf8;letter-spacing:-1px;">N</td>
+                        <td style="width:40px;height:40px;text-align:center;vertical-align:middle;font-size:13px;font-weight:800;color:#818cf8;letter-spacing:-1px;">${BRAND.shortName}</td>
                       </tr>
                     </table>
                   </td>
                 </tr>
               </table>
-              <p style="margin:14px 0 0;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#525252;">Portfolio Contact</p>
+              <p style="margin:14px 0 0;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#525252;">${BRAND.name} Contact</p>
             </td>
           </tr>
 
@@ -38,7 +39,7 @@ function emailTemplate(name: string, email: string, projectType: string, message
                 <tr>
                   <td>
                     <p style="margin:0;font-size:20px;font-weight:700;color:#fafafa;">New Project Inquiry</p>
-                    <p style="margin:4px 0 0;font-size:13px;color:#525252;">A potential client has reached out through your portfolio.</p>
+                    <p style="margin:4px 0 0;font-size:13px;color:#525252;">A potential client has reached out through ${BRAND.name}.</p>
                   </td>
                 </tr>
               </table>
@@ -132,8 +133,8 @@ function emailTemplate(name: string, email: string, projectType: string, message
 
           <tr>
             <td align="center" style="padding-top:28px;">
-              <p style="margin:0;font-size:11px;color:#525252;">NEXUS · Coimbatore, Tamilnadu</p>
-              <p style="margin:4px 0 0;font-size:10px;color:#3f3f46;">This inquiry was submitted from your portfolio website.</p>
+              <p style="margin:0;font-size:11px;color:#525252;">${BRAND.name} · ${BRAND.location}</p>
+              <p style="margin:4px 0 0;font-size:10px;color:#3f3f46;">This inquiry was submitted from the ${BRAND.name} website.</p>
             </td>
           </tr>
 
@@ -170,7 +171,7 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: `"${name}" <kalandars2004@gmail.com>`,
       to: 'kalandars2004@gmail.com',
-      subject: `Portfolio Inquiry — ${name} (${projectType})`,
+      subject: `${BRAND.name} Inquiry — ${name} (${projectType})`,
       html: emailTemplate(name, email, projectType, message),
     })
 

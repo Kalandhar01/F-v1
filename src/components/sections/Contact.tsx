@@ -31,7 +31,6 @@ const projectTypes = [
   { value: 'UI/UX Design', icon: Palette },
   { value: 'SaaS Development', icon: Cloud },
   { value: 'E-Commerce', icon: ShoppingCart },
-  { value: 'Branding', icon: Sparkles },
   { value: 'Consulting', icon: Lightbulb },
   { value: 'Other', icon: HelpCircle },
 ]

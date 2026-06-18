@@ -198,7 +198,7 @@ export default function Works() {
   }, [])
 
   return (
-    <section id="work" className="relative py-24 sm:py-32">
+    <section id="work" className="relative z-10 overflow-hidden py-20 md:py-28 lg:py-32">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(255,255,255,0.015),transparent)] pointer-events-none" />
       <Container>
         <motion.div

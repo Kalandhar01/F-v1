@@ -3,7 +3,7 @@ import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
 import Works from "@/components/sections/Works";
 import WhyUs from "@/components/sections/WhyUs";
-import Team from "@/components/sections/Team";
+import DigitalGrowthEcosystem from "@/components/sections/DigitalGrowthEcosystem";
 import FAQ from "@/components/sections/FAQ";
 import LogoCloud from "@/components/sections/LogoCloud";
 import Contact from "@/components/sections/Contact";
@@ -19,7 +19,7 @@ export default function Home() {
           <Services />
           <Works />
           <WhyUs />
-          <Team />
+          <DigitalGrowthEcosystem />
           <FAQ />
           <LogoCloud />
           <Contact />

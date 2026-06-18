@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface SplashCursorProps {
   color?: string
@@ -23,8 +23,18 @@ export default function SplashCursor({
 }: SplashCursorProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const animationRef = useRef<number>(0)
+  const [isMobileDevice, setIsMobileDevice] = useState(true) // Default to true (disabled) until client mounts
 
   useEffect(() => {
+    setIsMobileDevice(window.innerWidth < 768)
+    const handleResize = () => setIsMobileDevice(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  useEffect(() => {
+    if (isMobileDevice) return // Disable completely on mobile
+
     const canvas = canvasRef.current
     if (!canvas) return
 
@@ -371,7 +381,9 @@ export default function SplashCursor({
       canvas.removeEventListener('mousemove', mouseMove)
       canvas.removeEventListener('touchmove', touchMove)
     }
-  }, [color, densityDissipation, velocityDissipation, splatRadius, pressureIterations])
+  }, [color, densityDissipation, velocityDissipation, splatRadius, pressureIterations, isMobileDevice])
+
+  if (isMobileDevice) return null
 
   return (
     <div
