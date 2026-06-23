@@ -103,7 +103,7 @@ export default function MobileNav() {
 
                 <div className="flex-1 overflow-y-auto px-5 py-1">
                   <nav>
-                    <ul className="space-y-2">
+                    <ul className="space-y-6">
                       {navLinks.map((link) => {
                         const isActive = isHomePage && (link.href.startsWith('#') || link.href.startsWith('/#'))
                           ? false
@@ -184,7 +184,7 @@ export default function MobileNav() {
                   </nav>
                 </div>
 
-                <div className="border-t border-white/[0.04] px-5 py-4">
+                <div className="border-t border-white/[0.04] px-5 py-6 pb-32">
                   <span className="text-[0.5rem] font-semibold tracking-[0.2em] uppercase text-white/20">
                     Social
                   </span>
