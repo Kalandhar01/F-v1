@@ -9,6 +9,17 @@ import Silk from '@/components/Silk'
 import CountUp from '@/components/ui/CountUp'
 import { MobileTechMarquee } from '@/components/sections/hero/MobileTechMarquee'
 
+const floatingTechIcons = [
+  { name: 'Next.js', slug: 'nextdotjs', top: '15%', left: '5%' },
+  { name: 'Google Ads', slug: 'googleads', top: '22%', right: '8%' },
+  { name: 'TypeScript', slug: 'typescript', bottom: '22%', left: '8%' },
+  { name: 'HubSpot', slug: 'hubspot', bottom: '18%', right: '5%' },
+  { name: 'React', slug: 'react', top: '45%', left: '2%' },
+  { name: 'Meta Ads', slug: 'meta', top: '45%', right: '3%' },
+  { name: 'Node.js', slug: 'nodedotjs', bottom: '40%', left: '4%' },
+  { name: 'LinkedIn', slug: 'linkedin', bottom: '38%', right: '4%' },
+]
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -46,6 +57,36 @@ export default function Hero() {
 
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+
+      {/* Floating Tech Icons */}
+      {floatingTechIcons.map((tech, i) => (
+        <motion.div
+          key={tech.name}
+          className="absolute hidden lg:block pointer-events-none"
+          style={{ top: tech.top, left: tech.left, right: tech.right, bottom: tech.bottom } as React.CSSProperties}
+          initial={{ opacity: 0, scale: 0.6 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 + i * 0.15 }}
+        >
+          <motion.div
+            className="flex items-center justify-center rounded-full border border-white/[0.04] bg-white/[0.015] backdrop-blur-sm"
+            style={{ width: 44, height: 44 }}
+            animate={{ y: [0, -8 - (i * 2), 0] }}
+            transition={{
+              duration: 4 + i * 0.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: i * 0.3,
+            }}
+          >
+            <img
+              src={`/icons/${tech.slug}.svg`}
+              alt={tech.name}
+              className="w-5 h-5 opacity-50"
+            />
+          </motion.div>
+        </motion.div>
+      ))}
 
       {/* Grid background */}
       <div className="absolute inset-0 pointer-events-none">

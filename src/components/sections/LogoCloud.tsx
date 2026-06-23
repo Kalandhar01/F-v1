@@ -6,26 +6,7 @@ import Container from '@/components/ui/Container'
 import SectionHeading from '@/components/ui/SectionHeading'
 
 const logos = [
-  { name: 'Raycast', src: 'https://assets.aceternity.com/logos/raycast.webp' },
-  { name: 'Twitch', src: 'https://assets.aceternity.com/logos/twitch.webp' },
-  { name: 'Spotify', src: 'https://assets.aceternity.com/logos/spotify.webp' },
-  { name: 'Hulu', src: 'https://assets.aceternity.com/logos/hulu.webp' },
-  { name: 'YouTube', src: 'https://assets.aceternity.com/logos/youtube.webp' },
-  { name: 'Character AI', src: 'https://assets.aceternity.com/logos/characterai.png' },
-  { name: 'OpenAI', src: 'https://assets.aceternity.com/logos/openai.png' },
-  { name: 'Oracle', src: 'https://assets.aceternity.com/logos/oracle.png' },
-  { name: 'Portola', src: 'https://assets.aceternity.com/logos/portola.png' },
-  { name: 'Granola', src: 'https://assets.aceternity.com/logos/granola.png' },
-  { name: 'Vercel', src: 'https://assets.aceternity.com/logos/vercel.png' },
-  { name: 'Netflix', src: 'https://assets.aceternity.com/logos/netflix.webp' },
-  { name: 'Figma', src: 'https://assets.aceternity.com/logos/figma.png' },
-  { name: 'Notion', src: 'https://cdn.simpleicons.org/notion/888' },
-  { name: 'Linear', src: 'https://cdn.simpleicons.org/linear/888' },
-  { name: 'Stripe', src: 'https://cdn.simpleicons.org/stripe/888' },
-  { name: 'Discord', src: 'https://cdn.simpleicons.org/discord/888' },
-  { name: 'Slack', src: 'https://cdn.jsdelivr.net/npm/simple-icons/icons/slack.svg' },
-  { name: 'Framer', src: 'https://assets.aceternity.com/logos/framer.webp' },
-  { name: 'Sentry', src: 'https://cdn.simpleicons.org/sentry/888' },
+  { name: 'RACTYSH', src: '/ractysh-logo.webp' },
 ]
 
 export default function LogoCloud() {

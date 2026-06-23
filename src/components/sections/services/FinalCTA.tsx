@@ -30,16 +30,31 @@ export default function FinalCTA({
   return (
     <section className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(99,102,241,0.06),transparent)] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-indigo-500/5 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-purple-500/5 blur-[120px] pointer-events-none" />
+
       <div ref={ref} className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
         <motion.div
-          className="relative rounded-3xl p-8 sm:p-12 lg:p-16 border overflow-hidden"
+          className="relative rounded-3xl p-8 sm:p-12 lg:p-16 border overflow-hidden group"
           style={{
             background: 'rgba(255,255,255,0.02)',
             borderColor: 'rgba(255,255,255,0.06)',
           }}
         >
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_0%,rgba(99,102,241,0.06),transparent)] pointer-events-none" />
-          <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-indigo-400/20 to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-400/20 to-transparent group-hover:via-indigo-400/40 transition-all duration-700" />
+
+          <div
+            className="absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+            style={{
+              background: 'linear-gradient(135deg, rgba(99,102,241,0.08), transparent 40%, rgba(129,140,248,0.05) 70%, transparent)',
+              mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+              WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+              maskComposite: 'exclude',
+              WebkitMaskComposite: 'xor',
+              padding: '1px',
+            }}
+          />
 
           <div className="relative">
             <motion.p

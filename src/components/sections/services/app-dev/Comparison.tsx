@@ -3,23 +3,23 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import SectionHeading from '@/components/ui/SectionHeading'
-import { Zap, Layers, Search, Shield, Eye, RefreshCw } from 'lucide-react'
+import { Zap, Smartphone, Wifi, Shield, Palette, RefreshCw } from 'lucide-react'
 
 const comparisons = [
-  { metric: 'Performance', icon: Zap, traditional: 'Slow load times, bloated code', ours: 'Lighthouse 95+ with optimized Core Web Vitals' },
-  { metric: 'Scalability', icon: Layers, traditional: 'Fixed infrastructure, manual scaling', ours: 'Auto-scaling cloud architecture built for growth' },
-  { metric: 'SEO', icon: Search, traditional: 'Basic meta tags, no structured data', ours: 'Semantic HTML, JSON-LD, sitemaps, metadata optimization' },
-  { metric: 'Security', icon: Shield, traditional: 'Basic HTTPS, no protection layers', ours: 'XSS/CSRF protection, CSP headers, encrypted data' },
-  { metric: 'Accessibility', icon: Eye, traditional: 'No WCAG compliance', ours: 'WCAG 2.1 AA compliant with keyboard navigation' },
-  { metric: 'Maintainability', icon: RefreshCw, traditional: 'Spaghetti code, no documentation', ours: 'Clean architecture, typed code, comprehensive docs' },
+  { metric: 'Performance', icon: Zap, traditional: 'Slow startup, janky animations, memory leaks', ours: 'Optimized 60fps with native threading and lazy loading' },
+  { metric: 'UX & Navigation', icon: Smartphone, traditional: 'Clunky navigation, non-native gestures', ours: 'Native gestures, smooth transitions, platform-standard patterns' },
+  { metric: 'Offline Support', icon: Wifi, traditional: 'No offline mode, entirely dependent on internet', ours: 'Offline-first with local caching and background sync' },
+  { metric: 'Security', icon: Shield, traditional: 'Basic encryption, no secure storage', ours: 'AES-256 encryption, biometric auth, secure enclave storage' },
+  { metric: 'Design System', icon: Palette, traditional: 'Inconsistent UI, no design tokens', ours: 'Platform-specific design (Material Design / HIG), consistent components' },
+  { metric: 'Maintainability', icon: RefreshCw, traditional: 'Tightly coupled code, hard to update', ours: 'Clean architecture with MVVM, typed code, comprehensive docs' },
 ]
 
 const scores: Record<string, { old: number; new: number }> = {
   'Performance': { old: 25, new: 95 },
-  'Scalability': { old: 15, new: 95 },
-  'SEO': { old: 30, new: 90 },
+  'UX & Navigation': { old: 20, new: 95 },
+  'Offline Support': { old: 10, new: 90 },
   'Security': { old: 20, new: 95 },
-  'Accessibility': { old: 10, new: 92 },
+  'Design System': { old: 15, new: 92 },
   'Maintainability': { old: 20, new: 90 },
 }
 
@@ -36,8 +36,8 @@ export default function Comparison() {
       <div ref={ref} className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
         <SectionHeading
           label="Our Standard"
-          title="Why Choose Our Development"
-          description="We don't just build websites — we engineer high-performance digital products."
+          title="Why Choose Our App Development"
+          description="We don't just build apps — we engineer high-performance mobile experiences."
         />
 
         <div className="space-y-3 sm:space-y-4">
@@ -80,7 +80,6 @@ export default function Comparison() {
                     <span className="text-[9px] sm:text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400/60">New</span>
                   </div>
 
-                  {/* Score bars */}
                   <div className="flex items-center gap-3 sm:gap-4 mb-3">
                     <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(239,68,68,0.08)' }}>
                       <motion.div

@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
 import { BRAND } from '@/config/brand'
 import ServicesPageWrapper from '@/components/ServicesPageWrapper'
-import ServiceHero from '@/components/sections/services/ServiceHero'
-import MarketingDashboard from '@/components/sections/services/digital-marketing/MarketingDashboard'
-import BentoGrid from '@/components/sections/services/digital-marketing/BentoGrid'
-import CampaignDashboard from '@/components/sections/services/digital-marketing/CampaignDashboard'
-import PlatformWall from '@/components/sections/services/digital-marketing/PlatformWall'
-import CaseStudyShowcase from '@/components/sections/services/digital-marketing/CaseStudyShowcase'
-import GrowthPrinciples from '@/components/sections/services/digital-marketing/GrowthPrinciples'
-import MarketingOS from '@/components/sections/services/digital-marketing/MarketingOS'
+import DigitalMarketingHero from '@/components/sections/services/digital-marketing/DigitalMarketingHero'
+import WhyChooseUs from '@/components/sections/services/digital-marketing/WhyChooseUs'
+import SolutionsGrid from '@/components/sections/services/digital-marketing/SolutionsGrid'
+import ProcessTimeline from '@/components/sections/services/digital-marketing/ProcessTimeline'
+import IndustriesServed from '@/components/sections/services/digital-marketing/IndustriesServed'
+import StatsSection from '@/components/sections/services/digital-marketing/StatsSection'
+import FAQ from '@/components/sections/services/digital-marketing/FAQ'
 import FinalCTA from '@/components/sections/services/FinalCTA'
 import FadeInView from '@/components/ui/FadeInView'
 
@@ -25,37 +24,20 @@ export const metadata: Metadata = {
 export default function DigitalMarketingPage() {
   return (
     <ServicesPageWrapper>
-      <ServiceHero
-        label="Digital Marketing"
-        title="Data-Driven Strategies That Deliver Growth"
-        description="Transform your digital presence with proven marketing strategies. From SEO and paid ads to social media and content marketing, we drive measurable results that grow your business."
-        ctaText="Grow Your Business"
-        ctaHref="/#contact"
-        secondaryCtaText="Book Consultation"
-        secondaryCtaHref="/#contact"
-        techIcons={[
-          { name: 'Google Ads', color: '#4285F4' },
-          { name: 'Meta Ads', color: '#1877F2' },
-          { name: 'SEO', color: '#34A853' },
-          { name: 'Analytics', color: '#E37400' },
-          { name: 'LinkedIn', color: '#0A66C2' },
-        ]}
-      />
+      <DigitalMarketingHero />
 
-      <FadeInView><MarketingDashboard /></FadeInView>
-      <FadeInView><BentoGrid /></FadeInView>
-      <FadeInView><CampaignDashboard /></FadeInView>
-      <FadeInView><PlatformWall /></FadeInView>
-      <FadeInView><CaseStudyShowcase /></FadeInView>
-      <FadeInView><GrowthPrinciples /></FadeInView>
-      <FadeInView><MarketingOS /></FadeInView>
+      <FadeInView><WhyChooseUs /></FadeInView>
+      <FadeInView><SolutionsGrid /></FadeInView>
+      <FadeInView><ProcessTimeline /></FadeInView>
+      <FadeInView><IndustriesServed /></FadeInView>
+      <FadeInView><StatsSection /></FadeInView>
+      <FadeInView><FAQ /></FadeInView>
       <FadeInView>
         <FinalCTA
-          label="Ready to scale?"
-          title="Ready To Scale Beyond Your Competition?"
-          description="Build predictable growth systems powered by data, creativity, and performance marketing."
-          primaryText="Start Growth Strategy"
-          secondaryText="Book Discovery Call"
+          title="Ready to Scale Your Business Online?"
+          description="Partner with a team focused on measurable growth, stronger brand visibility, and high-quality lead generation."
+          primaryText="Book Consultation"
+          secondaryText="Talk To Our Expert"
         />
       </FadeInView>
     </ServicesPageWrapper>

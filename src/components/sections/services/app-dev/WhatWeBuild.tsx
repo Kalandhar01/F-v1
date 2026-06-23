@@ -3,14 +3,14 @@
 import { useRef, useState, type CSSProperties } from 'react'
 import { motion, useInView } from 'framer-motion'
 import SectionHeading from '@/components/ui/SectionHeading'
-import { Globe, ShoppingCart, LayoutDashboard, Building2, Smartphone, Rocket } from 'lucide-react'
+import { ShoppingBag, MessageSquare, Heart, Truck, GraduationCap, Rocket } from 'lucide-react'
 
 const items = [
-  { icon: Globe, title: 'Business Websites', desc: 'Professional websites that establish your online presence and drive business growth with premium design and performance.', color: '#818cf8' },
-  { icon: ShoppingCart, title: 'E-Commerce Platforms', desc: 'Revenue-driving online stores with optimized checkout flows, inventory management, and seamless payment integration.', color: '#c084fc' },
-  { icon: LayoutDashboard, title: 'SaaS Products', desc: 'Scalable SaaS platforms with robust architecture, subscription management, and seamless user experiences.', color: '#38bdf8' },
-  { icon: Building2, title: 'Enterprise Solutions', desc: 'Enterprise-grade web applications built for scale, security, and performance with modern cloud infrastructure.', color: '#34d399' },
-  { icon: Smartphone, title: 'Progressive Web Apps', desc: 'App-like experiences in the browser with offline support, push notifications, and native device features.', color: '#f472b6' },
+  { icon: ShoppingBag, title: 'E-Commerce Apps', desc: 'Native shopping experiences with smooth checkout, real-time inventory, and in-app payments.', color: '#818cf8' },
+  { icon: MessageSquare, title: 'Social Platforms', desc: 'Engaging social networking apps with real-time messaging, feeds, and rich media sharing.', color: '#c084fc' },
+  { icon: Heart, title: 'Health & Fitness', desc: 'Connected health apps with activity tracking, goal setting, and wearable device integration.', color: '#38bdf8' },
+  { icon: Truck, title: 'On-Demand Services', desc: 'Real-time service platforms with live tracking, instant booking, and automated dispatch systems.', color: '#34d399' },
+  { icon: GraduationCap, title: 'EdTech Solutions', desc: 'Interactive learning platforms with video lessons, gamification, progress tracking, and assessments.', color: '#f472b6' },
   { icon: Rocket, title: 'Startup MVPs', desc: 'Rapidly launch minimum viable products with lean development methodologies and modern tech stacks.', color: '#fbbf24' },
 ]
 
@@ -106,9 +106,9 @@ export default function WhatWeBuild() {
       <div ref={ref} className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="max-w-2xl mx-auto text-center mb-16">
           <SectionHeading
-            label="Development"
+            label="Apps"
             title="What We Build"
-            description="From MVPs to enterprise platforms — every project crafted for speed, scale, and impact."
+            description="From MVPs to enterprise apps — every project crafted for speed, scale, and impact."
           />
         </div>
 

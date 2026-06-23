@@ -74,7 +74,7 @@ export default function MobileNav() {
               className="fixed inset-y-0 right-0 z-50 w-full max-w-sm border-l border-white/[0.04] bg-black"
             >
               <div className="flex h-full flex-col">
-                <div className="flex items-center justify-between px-6 pt-6 pb-4">
+                <div className="flex items-center justify-between px-5 pt-4 pb-2">
                   <a
                     href={isHomePage ? '#hero' : '/'}
                     className="group flex items-center gap-2.5 transition-all duration-300 hover:scale-[1.03] hover:drop-shadow-[0_0_18px_rgba(99,102,241,0.5)]"
@@ -85,7 +85,7 @@ export default function MobileNav() {
                       alt={siteConfig.name}
                       width={120}
                       height={80}
-                      className="h-8 w-auto object-contain transition-all duration-300"
+                      className="h-7 w-auto object-contain transition-all duration-300"
                       priority
                     />
                     <span className="text-sm font-semibold tracking-tight text-white">
@@ -94,16 +94,16 @@ export default function MobileNav() {
                   </a>
                   <button
                     onClick={close}
-                    className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.04] bg-white/[0.02] text-white/60 hover:text-white transition-colors duration-200"
+                    className="flex h-7 w-7 items-center justify-center rounded-lg border border-white/[0.04] bg-white/[0.02] text-white/60 hover:text-white transition-colors duration-200"
                     aria-label="Close menu"
                   >
-                    <X size={14} />
+                    <X size={12} />
                   </button>
                 </div>
 
-                <div className="flex-1 overflow-y-auto px-6 py-2">
+                <div className="flex-1 overflow-y-auto px-5 py-1">
                   <nav>
-                    <ul className="space-y-1">
+                    <ul className="space-y-2">
                       {navLinks.map((link) => {
                         const isActive = isHomePage && (link.href.startsWith('#') || link.href.startsWith('/#'))
                           ? false
@@ -116,9 +116,9 @@ export default function MobileNav() {
                             <li key={link.label}>
                               <button
                                 onClick={() => setServicesExpanded(!servicesExpanded)}
-                                className="flex w-full items-center justify-between py-2.5 text-left"
+                                className="flex w-full items-center justify-between py-3 text-left"
                               >
-                                <span className="text-base font-semibold tracking-tight text-white">
+                                <span className="text-sm font-semibold tracking-tight text-white">
                                   {link.label}
                                 </span>
                                 <motion.span
@@ -126,7 +126,7 @@ export default function MobileNav() {
                                   transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
                                   className="text-white/30"
                                 >
-                                  <ChevronDown size={14} />
+                                  <ChevronDown size={12} />
                                 </motion.span>
                               </button>
 
@@ -139,20 +139,19 @@ export default function MobileNav() {
                                     transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                                     className="overflow-hidden"
                                   >
-                                    <ul className="space-y-0.5 pb-1.5 pl-3 border-l border-white/[0.04] ml-1 mt-0.5">
+                                    <ul className="pb-1 pl-3 border-l border-white/[0.04] ml-1">
                                       {link.children?.map((child) => (
                                         <li key={child.label}>
                                           <a
                                             href={child.href}
                                             onClick={close}
                                             className={cn(
-                                              'flex items-center gap-2 py-2 text-sm transition-colors duration-200',
+                                              'flex items-center gap-2 py-2.5 text-sm transition-colors duration-200',
                                               pathname === child.href
                                                 ? 'text-indigo-300'
                                                 : 'text-white/40 hover:text-white/70',
                                             )}
                                           >
-                                            <span className="text-[0.5rem] text-white/20">↳</span>
                                             {child.label}
                                           </a>
                                         </li>
@@ -171,11 +170,12 @@ export default function MobileNav() {
                               href={link.href}
                               onClick={close}
                               className={cn(
-                                'block py-2.5 text-base font-semibold tracking-tight transition-colors duration-200',
+                                'flex items-center justify-between py-3 text-sm font-semibold tracking-tight transition-colors duration-200',
                                 isActive ? 'text-indigo-300' : 'text-white hover:text-white/70',
                               )}
                             >
-                              {link.label}
+                              <span>{link.label}</span>
+                              <span className="text-white/20 transition-colors duration-200">→</span>
                             </a>
                           </li>
                         )
@@ -184,11 +184,11 @@ export default function MobileNav() {
                   </nav>
                 </div>
 
-                <div className="border-t border-white/[0.04] px-6 py-5">
-                  <span className="text-[0.55rem] font-semibold tracking-[0.2em] uppercase text-white/20">
+                <div className="border-t border-white/[0.04] px-5 py-4">
+                  <span className="text-[0.5rem] font-semibold tracking-[0.2em] uppercase text-white/20">
                     Social
                   </span>
-                  <div className="mt-3 flex items-center gap-4">
+                  <div className="mt-2 flex items-center gap-4">
                     {socialLinks.map((s) => (
                       <a
                         key={s.label}

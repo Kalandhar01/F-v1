@@ -5,18 +5,18 @@ import { motion, useInView } from 'framer-motion'
 import SectionHeading from '@/components/ui/SectionHeading'
 
 const techs = [
-  { name: 'Next.js', slug: 'nextdotjs', color: '#ffffff' },
-  { name: 'React', slug: 'react', color: '#61DAFB' },
+  { name: 'React Native', slug: 'react', color: '#61DAFB' },
+  { name: 'Expo', slug: 'expo', color: '#000020' },
   { name: 'TypeScript', slug: 'typescript', color: '#3178C6' },
   { name: 'Node.js', slug: 'nodedotjs', color: '#339933' },
-  { name: 'Express.js', slug: 'express', color: '#ffffff' },
+  { name: 'Firebase', slug: 'firebase', color: '#FFCA28' },
+  { name: 'Appwrite', slug: 'appwrite', color: '#FD366E' },
   { name: 'MongoDB', slug: 'mongodb', color: '#47A248' },
-  { name: 'PostgreSQL', slug: 'postgresql', color: '#4169E1' },
-  { name: 'AWS', slug: 'amazonwebservices', color: '#FF9900' },
+  { name: 'iOS', slug: 'apple', color: '#ffffff' },
+  { name: 'Android', slug: 'android', color: '#34A853' },
+  { name: 'Stripe', slug: 'stripe', color: '#8B5CF6' },
   { name: 'Docker', slug: 'docker', color: '#2496ED' },
-  { name: 'GitHub', slug: 'github', color: '#ffffff' },
-  { name: 'Vercel', slug: 'vercel', color: '#ffffff' },
-  { name: 'Tailwind', slug: 'tailwindcss', color: '#06B6D4' },
+  { name: 'AWS', slug: 'amazonwebservices', color: '#FF9900' },
 ]
 
 const orbPositions = [
@@ -157,8 +157,8 @@ export default function TechEcosystem() {
       <div ref={ref} className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <SectionHeading
           label="Tech Stack"
-          title="Technology Ecosystem"
-          description="Modern tools and frameworks powering every project we ship."
+          title="Mobile App Ecosystem"
+          description="Industry-leading frameworks and cloud services for building powerful mobile applications."
         />
 
         <div className="relative flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-5 max-w-4xl mx-auto">

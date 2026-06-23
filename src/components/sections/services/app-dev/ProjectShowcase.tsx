@@ -4,35 +4,35 @@ import { useRef, useState, type CSSProperties } from 'react'
 import { motion, useInView } from 'framer-motion'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Button from '@/components/ui/Button'
-import { ArrowRight, Monitor, ShoppingBag, Building2 } from 'lucide-react'
+import { ArrowRight, ShoppingBag, MessageSquare, Heart } from 'lucide-react'
 
 const projects = [
   {
-    title: 'SaaS Analytics Dashboard',
-    category: 'SaaS Platform',
-    icon: Monitor,
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'AWS'],
-    metrics: ['99.9% Uptime', '<100ms Response', '500K+ Users'],
+    title: 'Food Delivery App',
+    category: 'On-Demand',
+    icon: ShoppingBag,
+    tags: ['React Native', 'Node.js', 'Firebase', 'Stripe'],
+    metrics: ['50K+ Orders/Month', '<30min Avg. Delivery', '4.8★ Rating'],
     color: '#818cf8',
     gradient: 'from-indigo-500/20 via-indigo-500/5 to-transparent',
     glow: 'rgba(129,140,248,0.2)',
   },
   {
-    title: 'Global E-Commerce Platform',
-    category: 'E-Commerce',
-    icon: ShoppingBag,
-    tags: ['React', 'Node.js', 'MongoDB', 'Docker'],
-    metrics: ['$10M+ Revenue', '1M+ Products', '50K+ Orders/Month'],
+    title: 'Social Fitness Platform',
+    category: 'Health & Social',
+    icon: Heart,
+    tags: ['React Native', 'Expo', 'MongoDB', 'AWS'],
+    metrics: ['100K+ Active Users', '1M+ Workouts Tracked', '85% Retention'],
     color: '#c084fc',
     gradient: 'from-purple-500/20 via-purple-500/5 to-transparent',
     glow: 'rgba(192,132,252,0.2)',
   },
   {
-    title: 'Enterprise CMS Solution',
-    category: 'Enterprise',
-    icon: Building2,
-    tags: ['Next.js', 'TypeScript', 'AWS', 'PostgreSQL'],
-    metrics: ['10K+ Pages', '2K+ Editors', '99.99% Uptime'],
+    title: 'Real-Time Chat App',
+    category: 'Messaging',
+    icon: MessageSquare,
+    tags: ['React Native', 'TypeScript', 'Appwrite', 'Docker'],
+    metrics: ['500K+ Messages/Day', '<100ms Latency', '99.9% Uptime'],
     color: '#38bdf8',
     gradient: 'from-sky-500/20 via-sky-500/5 to-transparent',
     glow: 'rgba(56,189,248,0.2)',
@@ -182,8 +182,8 @@ export default function ProjectShowcase() {
         <div className="max-w-2xl mx-auto text-center mb-16">
           <SectionHeading
             label="Portfolio"
-            title="Project Showcase"
-            description="Real projects. Real results. See what we've built for our clients."
+            title="App Showcase"
+            description="Real apps. Real results. See what we've built for our clients."
           />
         </div>
 
