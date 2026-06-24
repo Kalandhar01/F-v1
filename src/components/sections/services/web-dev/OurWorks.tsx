@@ -26,12 +26,14 @@ interface Project {
   liveUrl?: string
 }
 
+const CLOUD_BASE = 'https://res.cloudinary.com/dgqbgdk73/image/upload'
+
 const projects: Project[] = [
   {
     title: 'Ractysh Group',
     category: 'Web Dev',
     description: 'Enterprise multi-business ecosystem featuring architecture, construction, real estate, OTC and global trade platforms.',
-    image: '/Our-Works/Web-Development/Ractysh-Group/hero.png',
+    image: `${CLOUD_BASE}/our-works/ractysh-group/hero.png`,
     tags: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
     projectUrl: '#',
     liveUrl: '#',
@@ -40,7 +42,7 @@ const projects: Project[] = [
     title: 'Ractysh Infra',
     category: 'Web Dev',
     description: 'Infrastructure company portal showcasing completed projects, service catalog, and client inquiry management.',
-    image: '/Our-Works/Web-Development/Ractysh-Infra/hero.png',
+    image: `${CLOUD_BASE}/our-works/ractysh-infra/hero.png`,
     tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'AWS'],
     projectUrl: '#',
     liveUrl: '#',
@@ -49,7 +51,7 @@ const projects: Project[] = [
     title: 'Ractysh Associates',
     category: 'Web Dev',
     description: 'Professional services website with detailed service pages, client testimonials, and consultation booking.',
-    image: '/Our-Works/Web-Development/Ractysh-Associates/hero.png',
+    image: `${CLOUD_BASE}/our-works/ractysh-associates/hero.png`,
     tags: ['React', 'Firebase', 'Tailwind', 'Vercel'],
     projectUrl: '#',
     liveUrl: '#',
@@ -58,7 +60,7 @@ const projects: Project[] = [
     title: 'Ractysh Design',
     category: 'Web Dev',
     description: 'Creative portfolio showcasing design work, client projects, and creative process with immersive visuals.',
-    image: '/Our-Works/Web-Development/Ractysh-Design/hero.png',
+    image: `${CLOUD_BASE}/our-works/ractysh-design/hero.png`,
     tags: ['Next.js', 'Framer Motion', 'GSAP', 'Sanity CMS'],
     projectUrl: '#',
     liveUrl: '#',
@@ -67,7 +69,7 @@ const projects: Project[] = [
     title: 'Ractysh Exim',
     category: 'Web Dev',
     description: 'Export-import business website with product catalogs, trade inquiry system, and multi-language support.',
-    image: '/Our-Works/Web-Development/Ractysh-Exim/hero.png',
+    image: `${CLOUD_BASE}/our-works/ractysh-exim/hero.png`,
     tags: ['Next.js', 'Stripe', 'Redis', 'Docker'],
     projectUrl: '#',
     liveUrl: '#',
@@ -76,7 +78,7 @@ const projects: Project[] = [
     title: 'Ractys Real Estate',
     category: 'Web Dev',
     description: 'High-impact real estate landing page with property listings, virtual tours, and lead capture.',
-    image: '/Our-Works/Web-Development/Ractys-Real-Estate/hero.png',
+    image: `${CLOUD_BASE}/our-works/ractys-real-estate/hero.png`,
     tags: ['React', 'Mapbox', 'Tailwind', 'HubSpot'],
     projectUrl: '#',
     liveUrl: '#',
