@@ -6,7 +6,7 @@ import Container from '@/components/ui/Container'
 import SectionHeading from '@/components/ui/SectionHeading'
 
 const logos = [
-  { name: 'RACTYSH', src: '/ractysh-logo.webp' },
+  { name: 'RACTYSH', src: '/Ractysh-logo.png' },
 ]
 
 export default function LogoCloud() {

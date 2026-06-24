@@ -22,7 +22,7 @@ export default function TrustedBy() {
           </p>
           <div className="opacity-60 hover:opacity-100 transition-opacity duration-300">
             <img
-              src="/ractysh-logo.webp"
+              src="/Ractysh-logo.png"
               alt="RACTYSH"
               className="h-10 sm:h-12 w-auto object-contain"
             />

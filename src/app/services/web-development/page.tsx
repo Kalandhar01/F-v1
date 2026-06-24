@@ -6,7 +6,6 @@ import TechEcosystem from '@/components/sections/services/web-dev/TechEcosystem'
 import WhatWeBuild from '@/components/sections/services/web-dev/WhatWeBuild'
 import DevProcess from '@/components/sections/services/web-dev/DevProcess'
 import Comparison from '@/components/sections/services/web-dev/Comparison'
-import ProjectShowcase from '@/components/sections/services/web-dev/ProjectShowcase'
 import FinalCTA from '@/components/sections/services/FinalCTA'
 import FadeInView from '@/components/ui/FadeInView'
 import PageLighting from '@/components/PageLighting'
@@ -61,7 +60,6 @@ export default function WebDevelopmentPage() {
       <FadeInView><WhatWeBuild /></FadeInView>
       <FadeInView><DevProcess /></FadeInView>
       <FadeInView><Comparison /></FadeInView>
-      <FadeInView><ProjectShowcase /></FadeInView>
       <FadeInView>
         <FinalCTA
           title="Ready To Build Something Exceptional?"

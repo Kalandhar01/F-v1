@@ -6,7 +6,6 @@ import TechEcosystem from '@/components/sections/services/app-dev/TechEcosystem'
 import WhatWeBuild from '@/components/sections/services/app-dev/WhatWeBuild'
 import DevProcess from '@/components/sections/services/app-dev/DevProcess'
 import Comparison from '@/components/sections/services/app-dev/Comparison'
-import ProjectShowcase from '@/components/sections/services/app-dev/ProjectShowcase'
 import FinalCTA from '@/components/sections/services/FinalCTA'
 import FadeInView from '@/components/ui/FadeInView'
 import PageLighting from '@/components/PageLighting'
@@ -61,7 +60,6 @@ export default function AppDevelopmentPage() {
       <FadeInView><WhatWeBuild /></FadeInView>
       <FadeInView><DevProcess /></FadeInView>
       <FadeInView><Comparison /></FadeInView>
-      <FadeInView><ProjectShowcase /></FadeInView>
       <FadeInView>
         <FinalCTA
           title="Ready to Launch Your App?"

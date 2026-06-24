@@ -435,18 +435,21 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         >
           <a
             href="/#hero"
-            className="sm-logo group flex items-center gap-2.5 select-none pointer-events-auto transition-all duration-300 hover:scale-[1.03] hover:drop-shadow-[0_0_18px_rgba(99,102,241,0.5)]"
+            className="sm-logo group flex items-center gap-1 select-none pointer-events-auto transition-all duration-300 hover:scale-[1.03] hover:drop-shadow-[0_0_18px_rgba(99,102,241,0.5)]"
             aria-label={BRAND.name}
             onClick={() => setOpen(false)}
           >
             <Image
               src={logoUrl ?? BRAND.assets.logoMobile}
               alt={BRAND.name}
-              width={120}
-              height={80}
-              className="h-8 w-auto object-contain transition-all duration-300"
+              width={240}
+              height={160}
+              className="h-16 w-auto object-contain transition-all duration-300"
               priority
             />
+            <span className="text-lg font-bold tracking-tight text-white">
+              {BRAND.name}
+            </span>
           </a>
 
           <button

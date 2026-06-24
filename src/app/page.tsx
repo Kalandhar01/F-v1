@@ -1,7 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
-import Works from "@/components/sections/Works";
+import OurWorks from "@/components/sections/services/web-dev/OurWorks";
 import WhyUs from "@/components/sections/WhyUs";
 import DigitalGrowthEcosystem from "@/components/sections/DigitalGrowthEcosystem";
 import FAQ from "@/components/sections/FAQ";
@@ -17,7 +17,7 @@ export default function Home() {
         <div className="relative z-10">
           <About />
           <Services />
-          <Works />
+          <OurWorks />
           <WhyUs />
           <DigitalGrowthEcosystem />
           <FAQ />

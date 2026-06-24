@@ -83,12 +83,12 @@ export default function MobileNav() {
                     <Image
                       src={siteConfig.assets.logoMobile}
                       alt={siteConfig.name}
-                      width={120}
-                      height={80}
-                      className="h-7 w-auto object-contain transition-all duration-300"
+                      width={240}
+                      height={160}
+                      className="h-16 sm:h-20 w-auto object-contain transition-all duration-300"
                       priority
                     />
-                    <span className="text-sm font-semibold tracking-tight text-white">
+                    <span className="text-lg sm:text-xl font-bold tracking-tight text-white">
                       {siteConfig.name}
                     </span>
                   </a>

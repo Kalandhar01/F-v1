@@ -55,10 +55,13 @@ export default function Footer() {
             <Image
               src={siteConfig.assets.logoFooter}
               alt={siteConfig.name}
-              width={168}
-              height={112}
-              className="h-12 w-auto object-contain transition-all duration-300"
+              width={240}
+              height={160}
+              className="h-16 sm:h-20 w-auto object-contain transition-all duration-300"
             />
+            <span className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+              {siteConfig.name}
+            </span>
           </a>
           <p className="mt-4 max-w-xs leading-6 text-neutral-400">
             {siteConfig.description}

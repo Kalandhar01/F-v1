@@ -125,12 +125,12 @@ export default function Navbar() {
               <Image
                 src={siteConfig.assets.logoDesktop}
                 alt={siteConfig.name}
-                width={144}
-                height={96}
-                className="h-10 w-auto object-contain transition-all duration-300"
+                width={240}
+                height={160}
+                className="h-16 sm:h-20 w-auto object-contain transition-all duration-300"
                 priority
               />
-              <span className="hidden lg:block whitespace-nowrap text-sm font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-indigo-100">
+              <span className="whitespace-nowrap text-base sm:text-lg font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-indigo-100">
                 {siteConfig.name}
               </span>
             </a>
