@@ -59,12 +59,6 @@ export default function Footer() {
               height={112}
               className="h-12 w-auto object-contain transition-all duration-300"
             />
-            <span className="flex flex-col">
-              <span className="font-semibold tracking-tight text-white">{siteConfig.name}</span>
-              <span className="text-[0.62rem] font-medium uppercase tracking-[0.18em] text-indigo-200/45">
-                {siteConfig.tagline}
-              </span>
-            </span>
           </a>
           <p className="mt-4 max-w-xs leading-6 text-neutral-400">
             {siteConfig.description}
