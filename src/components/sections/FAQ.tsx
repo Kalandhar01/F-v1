@@ -9,7 +9,7 @@ import SectionHeading from '@/components/ui/SectionHeading'
 const testimonials = [
   {
     quote:
-      'DreamDigital Deal transformed our digital presence completely. The new platform increased our conversion rate by 45% within the first month. Their strategic UX approach was a game-changer for our business.',
+      'ElevateX transformed our digital presence completely. The new platform increased our conversion rate by 45% within the first month. Their strategic UX approach was a game-changer for our business.',
     author: 'Ananya Sharma',
     role: 'CEO',
     company: 'Stellar Technologies',
@@ -18,7 +18,7 @@ const testimonials = [
   },
   {
     quote:
-      'Working with DreamDigital Deal felt like an extension of our own team. They understood our vision from day one and delivered beyond expectations. The analytics dashboard handles 50K+ users flawlessly.',
+      'Working with ElevateX felt like an extension of our own team. They understood our vision from day one and delivered beyond expectations. The analytics dashboard handles 50K+ users flawlessly.',
     author: 'Arjun Patel',
     role: 'CTO',
     company: 'Flow Productivity',
@@ -27,7 +27,7 @@ const testimonials = [
   },
   {
     quote:
-      'The e-commerce experience DreamDigital Deal built is absolutely stunning. Our revenue grew 150% year-over-year, and our customers consistently compliment the smooth shopping experience.',
+      'The e-commerce experience ElevateX built is absolutely stunning. Our revenue grew 150% year-over-year, and our customers consistently compliment the smooth shopping experience.',
     author: 'Priya Singh',
     role: 'VP of Product',
     company: 'Luxe Retail Group',
@@ -45,7 +45,7 @@ const testimonials = [
   },
   {
     quote:
-      'DreamDigital Deal doesn\'t just build websites — they build growth engines. Our user engagement metrics improved by 3x after the redesign. Their data-driven approach is unparalleled.',
+      'ElevateX doesn\'t just build websites — they build growth engines. Our user engagement metrics improved by 3x after the redesign. Their data-driven approach is unparalleled.',
     author: 'Neha Gupta',
     role: 'Head of Growth',
     company: 'Pulse Fitness',
@@ -54,7 +54,7 @@ const testimonials = [
   },
   {
     quote:
-      'From strategy to execution, DreamDigital Deal delivered excellence at every step. The brand identity they created is timeless, and the web experience perfectly captures our premium positioning.',
+      'From strategy to execution, ElevateX delivered excellence at every step. The brand identity they created is timeless, and the web experience perfectly captures our premium positioning.',
     author: 'Vikram Joshi',
     role: 'Founder & Creative Director',
     company: 'Aether Space',

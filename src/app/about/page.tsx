@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { BRAND } from '@/config/brand'
 import AboutContent from '@/components/sections/AboutContent'
-import DreamDigitalDifference from '@/components/sections/about/DreamDigitalDifference'
+import ElevateXDifference from '@/components/sections/about/ElevateXDifference'
 import HowWeThink from '@/components/sections/about/HowWeThink'
 import NumbersThatMatter from '@/components/sections/about/NumbersThatMatter'
 import TechStack from '@/components/sections/about/TechStack'

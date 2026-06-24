@@ -24,7 +24,7 @@ const cards = [
   { title: 'Long-Term Partnership', desc: 'We build relationships, not just websites. Ongoing support, optimization, and growth partnership.', size: 'md:col-span-1 md:row-span-1', gradient: 'from-indigo-500/10 via-transparent to-transparent', icon: HeartHandshake, colorIdx: 5 },
 ]
 
-export default function DreamDigitalDifference() {
+export default function ElevateXDifference() {
   return (
     <section className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_30%_at_50%_0%,rgba(99,102,241,0.03),transparent)] pointer-events-none" />
