@@ -73,12 +73,7 @@ export default function WhyChooseUs() {
                       <Icon size={20} style={{ color: item.color }} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div
-                        className="text-[10px] font-bold tracking-[0.15em] uppercase"
-                        style={{ color: `${item.color}70` }}
-                      >
-                        Service
-                      </div>
+
                       <h3 className="text-base sm:text-lg font-semibold text-white truncate">{item.title}</h3>
                     </div>
                   </div>
@@ -90,7 +85,7 @@ export default function WhyChooseUs() {
                       className="text-xs font-medium transition-colors duration-300"
                       style={{ color: `${item.color}80` }}
                     >
-                      Explore service
+                      Explore
                     </span>
                     <div
                       className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-400 group-hover:scale-110"

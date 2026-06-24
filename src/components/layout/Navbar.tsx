@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { navLinks, socialLinks, siteConfig } from '@/constants'
-import StaggeredMenu from '@/components/StaggeredMenu'
+import StaggeredMenu, { type StaggeredMenuItem } from '@/components/StaggeredMenu'
 import { ChevronDown, ArrowRight } from 'lucide-react'
 
 export default function Navbar() {
@@ -73,14 +73,15 @@ export default function Navbar() {
 
   const isHomePage = pathname === '/'
 
-  const mobileItems = navLinks.flatMap((link) => {
+  const mobileItems: StaggeredMenuItem[] = navLinks.flatMap((link) => {
     if (link.children) {
       return [
-        { label: 'Services', ariaLabel: 'Services menu', link: '/services/web-development' },
+        { label: 'Services', ariaLabel: 'Services menu', link: '#', isGroupHeader: true },
         ...link.children.map((child) => ({
           label: child.label,
           ariaLabel: child.label,
           link: child.href,
+          isSubItem: true,
         })),
       ]
     }

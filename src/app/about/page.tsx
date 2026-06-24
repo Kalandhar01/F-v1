@@ -22,7 +22,7 @@ export default function AboutPage() {
   return (
     <>
       <AboutContent />
-      <DreamDigitalDifference />
+      <ElevateXDifference />
       <HowWeThink />
       <NumbersThatMatter />
       <TechStack />

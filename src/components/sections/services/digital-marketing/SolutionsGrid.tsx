@@ -9,7 +9,7 @@ import { Search, Share2, BarChart3, FileText, Mail, Palette, ArrowRight } from '
 const solutions = [
   {
     icon: Search,
-    title: 'SEO Services',
+    title: 'SEO',
     desc: 'Improve search rankings and organic visibility through technical audits, on-page optimization, link building, and content strategy tailored to your industry.',
     color: '#34A853',
     stat: '3x',
