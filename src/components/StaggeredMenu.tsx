@@ -447,7 +447,6 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               className="h-8 w-auto object-contain transition-all duration-300"
               priority
             />
-            <span className="text-sm font-semibold tracking-tight text-white">{BRAND.name}</span>
           </a>
 
           <button
