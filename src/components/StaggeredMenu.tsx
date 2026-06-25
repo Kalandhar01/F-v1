@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react'
+import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from 'react'
 import { gsap } from 'gsap'
 import Image from 'next/image'
 import { BRAND } from '@/config/brand'
@@ -55,6 +55,8 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 }) => {
   const [open, setOpen] = useState(false)
   const openRef = useRef(false)
+  const [scrolledUp, setScrolledUp] = useState(true)
+  const lastScrollY = useRef(0)
 
   const panelRef = useRef<HTMLDivElement | null>(null)
   const preLayersRef = useRef<HTMLDivElement | null>(null)
@@ -392,8 +394,25 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     }
   }, [closeOnClickAway, open, closeMenu])
 
+  useEffect(() => {
+    const onScroll = () => {
+      if (openRef.current) return
+      const currentY = window.scrollY
+      if (currentY > 120) {
+        setScrolledUp(currentY < lastScrollY.current)
+      } else {
+        setScrolledUp(true)
+      }
+      lastScrollY.current = currentY
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <div className={`sm-scope fixed top-0 left-0 w-screen h-screen z-[201] ${open ? 'overflow-hidden' : 'pointer-events-none'}`}>
+    <div className={`sm-scope fixed top-0 left-0 w-screen h-screen z-[201] transition-transform duration-500 ${open ? 'overflow-hidden' : 'pointer-events-none'}`}
+      style={{ transform: open ? 'translateY(0)' : scrolledUp ? 'translateY(0)' : 'translateY(-100%)' }}
+    >
       <div
         className={`staggered-menu-wrapper pointer-events-none relative w-full h-full z-40 ${className || ''}`}
         style={
